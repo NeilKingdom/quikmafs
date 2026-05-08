@@ -104,7 +104,7 @@
  * @param v_a[in] The Augend vector
  * @param v_b[in] The Addend vector
  */
-LAC_DECL void lac_add_vec2(vec2 v_out, const vec2 v_a, const vec2 v_b) {
+void lac_add_vec2(vec2 v_out, const vec2 v_a, const vec2 v_b) {
     v_out[0] = v_a[0] + v_b[0];
     v_out[1] = v_a[1] + v_b[1];
 }
@@ -116,7 +116,7 @@ LAC_DECL void lac_add_vec2(vec2 v_out, const vec2 v_a, const vec2 v_b) {
  * @param[in] v_a The Augend vector
  * @param[in] v_b The Addend vector
  */
-LAC_DECL void lac_add_vec3(vec3 v_out, const vec3 v_a, const vec3 v_b) {
+void lac_add_vec3(vec3 v_out, const vec3 v_a, const vec3 v_b) {
     v_out[0] = v_a[0] + v_b[0];
     v_out[1] = v_a[1] + v_b[1];
     v_out[2] = v_a[2] + v_b[2];
@@ -129,7 +129,7 @@ LAC_DECL void lac_add_vec3(vec3 v_out, const vec3 v_a, const vec3 v_b) {
  * @param[in] v_a The Augend vector
  * @param[in] v_b The Addend vector
  */
-LAC_DECL void lac_add_vec4(vec4 v_out, const vec4 v_a, const vec4 v_b) {
+void lac_add_vec4(vec4 v_out, const vec4 v_a, const vec4 v_b) {
     v_out[0] = v_a[0] + v_b[0];
     v_out[1] = v_a[1] + v_b[1];
     v_out[2] = v_a[2] + v_b[2];
@@ -143,7 +143,7 @@ LAC_DECL void lac_add_vec4(vec4 v_out, const vec4 v_a, const vec4 v_b) {
  * @param[in] v_a The minuend vector
  * @param[in] v_b The subtrahend vector
  */
-LAC_DECL void lac_subtract_vec2(vec2 v_out, const vec2 v_a, const vec2 v_b) {
+void lac_subtract_vec2(vec2 v_out, const vec2 v_a, const vec2 v_b) {
     v_out[0] = v_a[0] - v_b[0];
     v_out[1] = v_a[1] - v_b[1];
 }
@@ -155,7 +155,7 @@ LAC_DECL void lac_subtract_vec2(vec2 v_out, const vec2 v_a, const vec2 v_b) {
  * @param[in] v_a The minuend vector
  * @param[in] v_b The subtrahend vector
  */
-LAC_DECL void lac_subtract_vec3(vec3 v_out, const vec3 v_a, const vec3 v_b) {
+void lac_subtract_vec3(vec3 v_out, const vec3 v_a, const vec3 v_b) {
     v_out[0] = v_a[0] - v_b[0];
     v_out[1] = v_a[1] - v_b[1];
     v_out[2] = v_a[2] - v_b[2];
@@ -168,7 +168,7 @@ LAC_DECL void lac_subtract_vec3(vec3 v_out, const vec3 v_a, const vec3 v_b) {
  * @param[in] v_a The minuend vector
  * @param[in] v_b The subtrahend vector
  */
-LAC_DECL void lac_subtract_vec4(vec4 v_out, const vec4 v_a, const vec4 v_b) {
+void lac_subtract_vec4(vec4 v_out, const vec4 v_a, const vec4 v_b) {
     v_out[0] = v_a[0] - v_b[0];
     v_out[1] = v_a[1] - v_b[1];
     v_out[2] = v_a[2] - v_b[2];
@@ -182,7 +182,7 @@ LAC_DECL void lac_subtract_vec4(vec4 v_out, const vec4 v_a, const vec4 v_b) {
  * @param[in] v_in The vector to be scaled
  * @param[in] scalar A constant representing the multiplier
  */
-LAC_DECL void lac_multiply_vec2(vec2 v_out, const vec2 v_in, const float scalar) {
+void lac_multiply_vec2(vec2 v_out, const vec2 v_in, const float scalar) {
     v_out[0] = v_in[0] * scalar;
     v_out[1] = v_in[1] * scalar;
 }
@@ -194,7 +194,7 @@ LAC_DECL void lac_multiply_vec2(vec2 v_out, const vec2 v_in, const float scalar)
  * @param[in] v_in The vector to be scaled
  * @param[in] scalar A constant representing the multiplier
  */
-LAC_DECL void lac_multiply_vec3(vec3 v_out, const vec3 v_in, const float scalar) {
+void lac_multiply_vec3(vec3 v_out, const vec3 v_in, const float scalar) {
     v_out[0] = v_in[0] * scalar;
     v_out[1] = v_in[1] * scalar;
     v_out[2] = v_in[2] * scalar;
@@ -207,7 +207,7 @@ LAC_DECL void lac_multiply_vec3(vec3 v_out, const vec3 v_in, const float scalar)
  * @param[in] v_in The vector to be scaled
  * @param[in] scalar A constant representing the multiplier
  */
-LAC_DECL void lac_multiply_vec4(vec4 v_out, const vec4 v_in, const float scalar) {
+void lac_multiply_vec4(vec4 v_out, const vec4 v_in, const float scalar) {
     v_out[0] = v_in[0] * scalar;
     v_out[1] = v_in[1] * scalar;
     v_out[2] = v_in[2] * scalar;
@@ -221,10 +221,10 @@ LAC_DECL void lac_multiply_vec4(vec4 v_out, const vec4 v_in, const float scalar)
  * @param[in] v_in The input vector
  * @param[in] m_in The input matrix
  */
-LAC_DECL void lac_multiply_vec2_mat2(vec2 v_out, const vec2 v_in, const mat2 m_in) {
+void lac_multiply_vec2_mat2(vec2 v_out, const vec2 v_in, const mat2 m_in) {
     vec2 _v_out = { 0 };
 
-#if LAC_IS_ROW_MAJOR
+#if LAC_ROW_MAJOR
     _v_out[0] = (m_in[0] * v_in[0]) + (m_in[1] * v_in[1]);
     _v_out[1] = (m_in[2] * v_in[0]) + (m_in[3] * v_in[1]);
 #else
@@ -242,10 +242,10 @@ LAC_DECL void lac_multiply_vec2_mat2(vec2 v_out, const vec2 v_in, const mat2 m_i
  * @param[in] v_in The input vector
  * @param[in] m_in The input matrix
  */
-LAC_DECL void lac_multiply_vec3_mat3(vec3 v_out, const vec3 v_in, const mat3 m_in) {
+void lac_multiply_vec3_mat3(vec3 v_out, const vec3 v_in, const mat3 m_in) {
     vec3 _v_out = { 0 };
 
-#if LAC_IS_ROW_MAJOR
+#if LAC_ROW_MAJOR
     _v_out[0] = (m_in[0] * v_in[0]) + (m_in[1] * v_in[1]) + (m_in[2] * v_in[2]);
     _v_out[1] = (m_in[3] * v_in[0]) + (m_in[4] * v_in[1]) + (m_in[5] * v_in[2]);
     _v_out[2] = (m_in[6] * v_in[0]) + (m_in[7] * v_in[1]) + (m_in[8] * v_in[2]);
@@ -265,10 +265,10 @@ LAC_DECL void lac_multiply_vec3_mat3(vec3 v_out, const vec3 v_in, const mat3 m_i
  * @param[in] v_in The input vector
  * @param[in] m_in The input matrix
  */
-LAC_DECL void lac_multiply_vec4_mat4(vec4 v_out, const vec4 v_in, const mat4 m_in) {
+void lac_multiply_vec4_mat4(vec4 v_out, const vec4 v_in, const mat4 m_in) {
     vec4 _v_out = { 0 };
 
-#if LAC_IS_ROW_MAJOR
+#if LAC_ROW_MAJOR
     _v_out[0] = (m_in[0]  * v_in[0]) + (m_in[1]  * v_in[1]) + (m_in[2]  * v_in[2]) + (m_in[3]  * v_in[3]);
     _v_out[1] = (m_in[4]  * v_in[0]) + (m_in[5]  * v_in[1]) + (m_in[6]  * v_in[2]) + (m_in[7]  * v_in[3]);
     _v_out[2] = (m_in[8]  * v_in[0]) + (m_in[9]  * v_in[1]) + (m_in[10] * v_in[2]) + (m_in[11] * v_in[3]);
@@ -290,9 +290,9 @@ LAC_DECL void lac_multiply_vec4_mat4(vec4 v_out, const vec4 v_in, const mat4 m_i
  * @param[in] v_in The vector to be scaled
  * @param[in] scalar A constant representing the divisor
  */
-LAC_DECL void lac_divide_vec2(vec2 v_out, const vec2 v_in, const float scalar) {
+void lac_divide_vec2(vec2 v_out, const vec2 v_in, const float scalar) {
     if (scalar == 0.0f) {
-        LAC_LOG("Attempted divide by 0", LAC_WARNING);
+        LAC_LOG("Attempted divide by 0", LAC_WARN);
         v_out[0] = 0.0f;
         v_out[1] = 0.0f;
     } else {
@@ -308,9 +308,9 @@ LAC_DECL void lac_divide_vec2(vec2 v_out, const vec2 v_in, const float scalar) {
  * @param[in] v_in The vector to be scaled
  * @param[in] scalar A constant representing the divisor
  */
-LAC_DECL void lac_divide_vec3(vec3 v_out, const vec3 v_in, const float scalar) {
+void lac_divide_vec3(vec3 v_out, const vec3 v_in, const float scalar) {
     if (scalar == 0.0f) {
-        LAC_LOG("Attempted divide by 0", LAC_WARNING);
+        LAC_LOG("Attempted divide by 0", LAC_WARN);
         v_out[0] = 0.0f;
         v_out[1] = 0.0f;
         v_out[2] = 0.0f;
@@ -328,9 +328,9 @@ LAC_DECL void lac_divide_vec3(vec3 v_out, const vec3 v_in, const float scalar) {
  * @param[in] v_in The vector to be scaled
  * @param[in] scalar A constant representing the divisor
  */
-LAC_DECL void lac_divide_vec4(vec4 v_out, const vec4 v_in, const float scalar) {
+void lac_divide_vec4(vec4 v_out, const vec4 v_in, const float scalar) {
     if (scalar == 0.0f) {
-        LAC_LOG("Attempted divide by 0", LAC_WARNING);
+        LAC_LOG("Attempted divide by 0", LAC_WARN);
         v_out[0] = 0.0f;
         v_out[1] = 0.0f;
         v_out[2] = 0.0f;
@@ -351,7 +351,7 @@ LAC_DECL void lac_divide_vec4(vec4 v_out, const vec4 v_in, const float scalar) {
  * @param[in] v_a The left-hand operand for the operation
  * @param[in] v_b The right-hand operand for the operation
  */
-LAC_DECL void lac_calc_dot_prod_vec2(float *dot_prod, const vec2 v_a, const vec2 v_b) {
+void lac_calc_dot_prod_vec2(float *dot_prod, const vec2 v_a, const vec2 v_b) {
     *dot_prod = (v_a[0] * v_b[0]) + (v_a[1] * v_b[1]);
 }
 
@@ -363,7 +363,7 @@ LAC_DECL void lac_calc_dot_prod_vec2(float *dot_prod, const vec2 v_a, const vec2
  * @param[in] v_a The left-hand operand for the operation
  * @param[in] v_b The right-hand operand for the operation
  */
-LAC_DECL void lac_calc_dot_prod_vec3(float *dot_prod, const vec3 v_a, const vec3 v_b) {
+void lac_calc_dot_prod_vec3(float *dot_prod, const vec3 v_a, const vec3 v_b) {
     *dot_prod = (v_a[0] * v_b[0]) + (v_a[1] * v_b[1]) + (v_a[2] * v_b[2]);
 }
 
@@ -375,7 +375,7 @@ LAC_DECL void lac_calc_dot_prod_vec3(float *dot_prod, const vec3 v_a, const vec3
  * @param[in] v_a The left-hand operand for the operation
  * @param[in] v_b The right-hand operand for the operation
  */
-LAC_DECL void lac_calc_dot_prod_vec4(float *dot_prod, const vec4 v_a, const vec4 v_b) {
+void lac_calc_dot_prod_vec4(float *dot_prod, const vec4 v_a, const vec4 v_b) {
     *dot_prod = (v_a[0] * v_b[0]) + (v_a[1] * v_b[1]) + (v_a[2] * v_b[2]) + (v_a[3] * v_b[3]);
 }
 
@@ -387,7 +387,7 @@ LAC_DECL void lac_calc_dot_prod_vec4(float *dot_prod, const vec4 v_a, const vec4
  * @param[in] v_a The left-hand operand for the operation
  * @param[in] v_b The right-hand operand for the operation
  */
-LAC_DECL void lac_calc_cross_prod(vec3 v_out, const vec3 v_a, const vec3 v_b) {
+void lac_calc_cross_prod(vec3 v_out, const vec3 v_a, const vec3 v_b) {
     vec3 _v_out = { 0 };
 
     _v_out[0] = (v_a[1] * v_b[2]) - (v_a[2] * v_b[1]);
@@ -403,7 +403,7 @@ LAC_DECL void lac_calc_cross_prod(vec3 v_out, const vec3 v_a, const vec3 v_b) {
  * @param[out] magnitude The calculated magnitude
  * @param[in] v_in The vector for which the magnitude is calculated
  */
-LAC_DECL void lac_calc_magnitude_vec2(float *magnitude, const vec2 v_in) {
+void lac_calc_magnitude_vec2(float *magnitude, const vec2 v_in) {
     *magnitude = sqrtf((v_in[0] * v_in[0]) + (v_in[1] * v_in[1]));
 }
 
@@ -413,7 +413,7 @@ LAC_DECL void lac_calc_magnitude_vec2(float *magnitude, const vec2 v_in) {
  * @param[out] magnitude The calculated magnitude
  * @param[in] v_in The vector for which the magnitude is calculated
  */
-LAC_DECL void lac_calc_magnitude_vec3(float *magnitude, const vec3 v_in) {
+void lac_calc_magnitude_vec3(float *magnitude, const vec3 v_in) {
     *magnitude = sqrtf((v_in[0] * v_in[0]) + (v_in[1] * v_in[1]) + (v_in[2] * v_in[2]));
 }
 
@@ -423,7 +423,7 @@ LAC_DECL void lac_calc_magnitude_vec3(float *magnitude, const vec3 v_in) {
  * @param[out] magnitude The calculated magnitude
  * @param[in] v_in The vector for which the magnitude is calculated
  */
-LAC_DECL void lac_calc_magnitude_vec4(float *magnitude, const vec4 v_in) {
+void lac_calc_magnitude_vec4(float *magnitude, const vec4 v_in) {
     *magnitude = sqrtf((v_in[0] * v_in[0]) + (v_in[1] * v_in[1]) + (v_in[2] * v_in[2]) + (v_in[3] * v_in[3]));
 }
 
@@ -434,7 +434,7 @@ LAC_DECL void lac_calc_magnitude_vec4(float *magnitude, const vec4 v_in) {
  * @param[out] v_out The normalized vector
  * @param[in] v_in The vector to be normalized
  */
-LAC_DECL void lac_normalize_vec2(vec2 v_out, const vec2 v_in) {
+void lac_normalize_vec2(vec2 v_out, const vec2 v_in) {
     float magnitude, inv_magnitude;
 
     lac_calc_magnitude_vec2(&magnitude, v_in);
@@ -455,7 +455,7 @@ LAC_DECL void lac_normalize_vec2(vec2 v_out, const vec2 v_in) {
  * @param[out] v_out The normalized vector
  * @param[in] v_in The vector to be normalized
  */
-LAC_DECL void lac_normalize_vec3(vec3 v_out, const vec3 v_in) {
+void lac_normalize_vec3(vec3 v_out, const vec3 v_in) {
     float magnitude, inv_magnitude;
 
     lac_calc_magnitude_vec3(&magnitude, v_in);
@@ -478,7 +478,7 @@ LAC_DECL void lac_normalize_vec3(vec3 v_out, const vec3 v_in) {
  * @param[out] v_out The normalized vector
  * @param[in] v_in The vector to be normalized
  */
-LAC_DECL void lac_normalize_vec4(vec4 v_out, const vec4 v_in) {
+void lac_normalize_vec4(vec4 v_out, const vec4 v_in) {
     float magnitude, inv_magnitude;
 
     lac_calc_magnitude_vec4(&magnitude, v_in);
@@ -504,7 +504,7 @@ LAC_DECL void lac_normalize_vec4(vec4 v_out, const vec4 v_in) {
  * @param[in] len The radial coordinate
  * @param[in] angle The angular coordinate (given in radians)
  */
-LAC_DECL void lac_polar_to_cartesian(vec2 v_out, const float len, const float angle) {
+void lac_polar_to_cartesian(vec2 v_out, const float len, const float angle) {
     v_out[0] = len * cosf(angle);
     v_out[1] = len * sinf(angle);
 }
@@ -517,7 +517,7 @@ LAC_DECL void lac_polar_to_cartesian(vec2 v_out, const float len, const float an
  * @param[out] angle The angular coordinate (given in radians)
  * @param[in] v_in A vector which represents the cartesian coordinates being converted
  */
-LAC_DECL void lac_cartesian_to_polar(float* restrict len, float* restrict angle, const vec2 v_in) {
+void lac_cartesian_to_polar(float* restrict len, float* restrict angle, const vec2 v_in) {
     lac_calc_magnitude_vec2(len, v_in);
     *angle = atan2f(v_in[1], v_in[0]);
 }

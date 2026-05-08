@@ -49,7 +49,7 @@
  * @param[in] m_a The augend matrix
  * @param[in] m_b The addend matrix
  */
-LAC_DECL void lac_add_mat2(mat2 m_out, const mat2 m_a, const mat2 m_b) {
+void lac_add_mat2(mat2 m_out, const mat2 m_a, const mat2 m_b) {
     m_out[0] = m_a[0] + m_b[0];
     m_out[1] = m_a[1] + m_b[1];
 
@@ -64,7 +64,7 @@ LAC_DECL void lac_add_mat2(mat2 m_out, const mat2 m_a, const mat2 m_b) {
  * @param[in] m_a The augend matrix
  * @param[in] m_b The addend matrix
  */
-LAC_DECL void lac_add_mat3(mat3 m_out, const mat3 m_a, const mat3 m_b) {
+void lac_add_mat3(mat3 m_out, const mat3 m_a, const mat3 m_b) {
     m_out[0] = m_a[0] + m_b[0];
     m_out[1] = m_a[1] + m_b[1];
     m_out[2] = m_a[2] + m_b[2];
@@ -85,7 +85,7 @@ LAC_DECL void lac_add_mat3(mat3 m_out, const mat3 m_a, const mat3 m_b) {
  * @param[in] m_a The augend matrix
  * @param[in] m_b The addend matrix
  */
-LAC_DECL void lac_add_mat4(mat4 m_out, const mat4 m_a, const mat4 m_b) {
+void lac_add_mat4(mat4 m_out, const mat4 m_a, const mat4 m_b) {
     m_out[0]  = m_a[0]  + m_b[0];
     m_out[1]  = m_a[1]  + m_b[1];
     m_out[2]  = m_a[2]  + m_b[2];
@@ -114,7 +114,7 @@ LAC_DECL void lac_add_mat4(mat4 m_out, const mat4 m_a, const mat4 m_b) {
  * @param[in] m_a The minuend matrix
  * @param[in] m_b The subtrahend matrix
  */
-LAC_DECL void lac_subtract_mat2(mat2 m_out, const mat2 m_a, const mat2 m_b) {
+void lac_subtract_mat2(mat2 m_out, const mat2 m_a, const mat2 m_b) {
     m_out[0] = m_a[0] - m_b[0];
     m_out[1] = m_a[1] - m_b[1];
 
@@ -129,7 +129,7 @@ LAC_DECL void lac_subtract_mat2(mat2 m_out, const mat2 m_a, const mat2 m_b) {
  * @param[in] m_a The minuend matrix
  * @param[in] m_b The subtrahend matrix
  */
-LAC_DECL void lac_subtract_mat3(mat3 m_out, const mat3 m_a, const mat3 m_b) {
+void lac_subtract_mat3(mat3 m_out, const mat3 m_a, const mat3 m_b) {
     m_out[0] = m_a[0] - m_b[0];
     m_out[1] = m_a[1] - m_b[1];
     m_out[2] = m_a[2] - m_b[2];
@@ -150,7 +150,7 @@ LAC_DECL void lac_subtract_mat3(mat3 m_out, const mat3 m_a, const mat3 m_b) {
  * @param[in] m_a The minuend matrix
  * @param[in] m_b The subtrahend matrix
  */
-LAC_DECL void lac_subtract_mat4(mat4 m_out, const mat4 m_a, const mat4 m_b) {
+void lac_subtract_mat4(mat4 m_out, const mat4 m_a, const mat4 m_b) {
     m_out[0]  = m_a[0]  - m_b[0];
     m_out[1]  = m_a[1]  - m_b[1];
     m_out[2]  = m_a[2]  - m_b[2];
@@ -180,10 +180,10 @@ LAC_DECL void lac_subtract_mat4(mat4 m_out, const mat4 m_a, const mat4 m_b) {
  * @param[in] m_a The multiplicand matrix
  * @param[in] m_b The multiplier matrix
  */
-LAC_DECL void lac_multiply_mat2(mat2 m_out, const mat2 m_a, const mat2 m_b) {
+void lac_multiply_mat2(mat2 m_out, const mat2 m_a, const mat2 m_b) {
     mat2 _m_out = { 0 };
 
-#if LAC_IS_ROW_MAJOR
+#if LAC_ROW_MAJOR
     _m_out[0] = (m_a[0] * m_b[0]) + (m_a[1] * m_b[2]);
     _m_out[1] = (m_a[0] * m_b[1]) + (m_a[1] * m_b[3]);
 
@@ -208,10 +208,10 @@ LAC_DECL void lac_multiply_mat2(mat2 m_out, const mat2 m_a, const mat2 m_b) {
  * @param[in] m_a The multiplicand matrix
  * @param[in] m_b The multiplier matrix
  */
-LAC_DECL void lac_multiply_mat3(mat3 m_out, const mat3 m_a, const mat3 m_b) {
+void lac_multiply_mat3(mat3 m_out, const mat3 m_a, const mat3 m_b) {
     mat3 _m_out = { 0 };
 
-#if LAC_IS_ROW_MAJOR
+#if LAC_ROW_MAJOR
     _m_out[0] = (m_a[0] * m_b[0]) + (m_a[1] * m_b[3]) + (m_a[2] * m_b[6]);
     _m_out[1] = (m_a[0] * m_b[1]) + (m_a[1] * m_b[4]) + (m_a[2] * m_b[7]);
     _m_out[2] = (m_a[0] * m_b[2]) + (m_a[1] * m_b[5]) + (m_a[2] * m_b[8]);
@@ -248,10 +248,10 @@ LAC_DECL void lac_multiply_mat3(mat3 m_out, const mat3 m_a, const mat3 m_b) {
  * @param[in] m_a The multiplicand matrix
  * @param[in] m_b The multiplier matrix
  */
-LAC_DECL void lac_multiply_mat4(mat4 m_out, const mat4 m_a, const mat4 m_b) {
+void lac_multiply_mat4(mat4 m_out, const mat4 m_a, const mat4 m_b) {
     mat4 _m_out = { 0 };
 
-#if LAC_IS_ROW_MAJOR
+#if LAC_ROW_MAJOR
     _m_out[0]  = (m_a[0] * m_b[0])  + (m_a[1] * m_b[4])  + (m_a[2] * m_b[8])   + (m_a[3] * m_b[12]);
     _m_out[1]  = (m_a[0] * m_b[1])  + (m_a[1] * m_b[5])  + (m_a[2] * m_b[9])   + (m_a[3] * m_b[13]);
     _m_out[2]  = (m_a[0] * m_b[2])  + (m_a[1] * m_b[6])  + (m_a[2] * m_b[10])  + (m_a[3] * m_b[14]);
@@ -303,7 +303,7 @@ LAC_DECL void lac_multiply_mat4(mat4 m_out, const mat4 m_a, const mat4 m_b) {
  * @param[out] m_out The transposed matrix
  * @param[in] m_in The matrix to be transposed
  */
-LAC_DECL void lac_transpose_mat2(mat2 m_out, const mat2 m_in) {
+void lac_transpose_mat2(mat2 m_out, const mat2 m_in) {
     mat2 _m_out = { 0 };
 
     _m_out[0] = m_in[0];
@@ -322,7 +322,7 @@ LAC_DECL void lac_transpose_mat2(mat2 m_out, const mat2 m_in) {
  * @param[out] m_out The transposed matrix
  * @param[in] m_in The matrix to be transposed
  */
-LAC_DECL void lac_transpose_mat3(mat3 m_out, const mat3 m_in) {
+void lac_transpose_mat3(mat3 m_out, const mat3 m_in) {
     mat3 _m_out = { 0 };
 
     _m_out[0] = m_in[0];
@@ -347,7 +347,7 @@ LAC_DECL void lac_transpose_mat3(mat3 m_out, const mat3 m_in) {
  * @param[out] m_out The transposed matrix
  * @param[in] m_in The matrix to be transposed
  */
-LAC_DECL void lac_transpose_mat4(mat4 m_out, const mat4 m_in) {
+void lac_transpose_mat4(mat4 m_out, const mat4 m_in) {
     mat4 _m_out = { 0 };
 
     _m_out[0]  = m_in[0];
